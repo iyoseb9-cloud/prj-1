@@ -55,6 +55,22 @@ body {
   z-index: 1000;
 }
 
+/* AdSense Container */
+.adsense-container {
+  margin: 1.5rem 0;
+  padding: 10px;
+  background-color: var(--input-bg);
+  border-radius: 8px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.ads-top { margin-top: 0; }
+.ads-middle { margin-bottom: 2rem; }
+
 .divider {
   margin: 3rem 0;
   border: 0;
