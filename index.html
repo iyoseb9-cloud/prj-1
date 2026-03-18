@@ -3,16 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
+  <title>Lotto Number Generator</title>
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  
-  <!-- 다크 모드 토글 버튼 추가 -->
-  <div style="margin-top: 20px;">
-    <button id="theme-toggle">Dark Mode</button>
+  <div class="container">
+    <div class="header">
+      <h1>Lotto Generator</h1>
+      <button id="theme-toggle" class="theme-btn">Dark Mode</button>
+    </div>
+
+    <div class="content">
+      <button id="generate-btn" class="main-btn">Generate 5 Sets</button>
+      <div id="lotto-results" class="results-container">
+        <!-- 로또 번호 세트가 여기에 표시됩니다 -->
+      </div>
+    </div>
   </div>
 
   <script defer type="text/javascript" src="/main.js"></script>
