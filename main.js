@@ -1,26 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const toggleButton = document.getElementById('theme-toggle');
+  const toggleBtn = document.getElementById('theme-toggle');
   const body = document.body;
 
-  // 로컬 스토리지에서 저장된 테마 불러오기
+  // 이전에 설정된 테마가 있다면 불러옴
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'dark') {
     body.classList.add('dark-mode');
-    toggleButton.textContent = 'Switch to Light Mode';
+    toggleBtn.textContent = 'Light Mode';
   }
 
-  toggleButton.addEventListener('click', () => {
+  toggleBtn.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
     
-    let currentTheme = 'light';
     if (body.classList.contains('dark-mode')) {
-      currentTheme = 'dark';
-      toggleButton.textContent = 'Switch to Light Mode';
+      toggleBtn.textContent = 'Light Mode';
+      localStorage.setItem('theme', 'dark');
     } else {
-      toggleButton.textContent = 'Switch to Dark Mode';
+      toggleBtn.textContent = 'Dark Mode';
+      localStorage.setItem('theme', 'light');
     }
-    
-    // 선택한 테마 저장
-    localStorage.setItem('theme', currentTheme);
   });
 });
