@@ -1,26 +1,27 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lotto Number Generator</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 번호 생성기</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>Lotto Generator</h1>
-      <button id="theme-toggle" class="theme-btn">Dark Mode</button>
+    <div class="container">
+        <header>
+            <h1>Lotto Generator</h1>
+            <button id="theme-toggle" class="btn-secondary">다크 모드</button>
+        </header>
+        
+        <main>
+            <p>버튼을 누르면 로또 번호 5세트를 추천해 드립니다.</p>
+            <button id="generate-btn" class="btn-primary">번호 생성하기</button>
+            
+            <div id="result-area" class="result-area">
+                <!-- 결과가 여기에 표시됩니다 -->
+            </div>
+        </main>
     </div>
-
-    <div class="content">
-      <button id="generate-btn" class="main-btn">Generate 5 Sets</button>
-      <div id="lotto-results" class="results-container">
-        <!-- 로또 번호 세트가 여기에 표시됩니다 -->
-      </div>
-    </div>
-  </div>
-
-  <script defer type="text/javascript" src="/main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
