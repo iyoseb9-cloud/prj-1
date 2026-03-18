@@ -3,79 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>인생역전 로또 번호 생성기</title>
+    <title>인생역전 로또 번호 생성기 - 무료 행운 번호 추천 및 당첨 팁</title>
+    <meta name="description" content="매주 업데이트되는 알고리즘을 통한 로또 행운 번호 생성기입니다. 당첨 확률을 높이는 통계적 접근과 사용법, 주의사항을 확인하세요.">
     <meta name="google-adsense-account" content="ca-pub-3682735612738746">
     <link rel="stylesheet" href="style.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3682735612738746" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- 테마 버튼 -->
+    <!-- 테마 토글 버튼 -->
     <button id="theme-toggle">다크 모드</button>
 
-    <div class="container">
-        <header>
-            <h1>로또 번호 생성기</h1>
-        </header>
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo">🍀 로또 행운기</div>
+            <ul class="nav-menu">
+                <li><a href="#generator">번호 생성</a></li>
+                <li><a href="#tips">당첨 팁</a></li>
+                <li><a href="#faq">자주 묻는 질문</a></li>
+                <li><a href="#contact">제휴 문의</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <div class="container">
         <!-- 상단 광고 영역 -->
         <div class="adsense-container ads-top">
-            <p style="font-size: 10px; color: #999; margin: 0;">ADVERTISEMENT</p>
-            <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-..." data-ad-slot="..." data-ad-format="auto" data-full-width-responsive="true"></ins> -->
-            <!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+            <p class="ad-label">ADVERTISEMENT</p>
+            <!-- 자동 광고가 적용되거나 수동 광고 코드를 여기에 넣으세요 -->
         </div>
-        
-        <main>
-            <section class="generator-section">
-                <p>아래 버튼을 누르면 행운의 번호 5세트를 뽑아드립니다!</p>
-                <button id="generate-btn" class="btn-primary">행운의 번호 뽑기</button>
-                <div id="result-area" class="result-area"></div>
-            </section>
 
-            <!-- 중간 광고 영역 (로또 번호 아래) -->
-            <div class="adsense-container ads-middle">
-                <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-..." data-ad-slot="..." data-ad-format="auto" data-full-width-responsive="true"></ins> -->
-                <!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+        <section id="generator" class="section">
+            <div class="hero">
+                <h1>인생역전 로또 번호 생성기</h1>
+                <p>빅데이터와 확률 기반의 알고리즘으로 당신의 행운을 찾아드립니다.</p>
             </div>
+            
+            <div class="generator-box">
+                <button id="generate-btn" class="btn-primary">행운의 번호 5세트 생성하기</button>
+                <div id="result-area" class="result-area"></div>
+            </div>
+        </section>
 
-            <hr class="divider">
+        <!-- 중간 광고 영역 -->
+        <div class="adsense-container ads-middle"></div>
 
-            <!-- 제휴 문의 폼 -->
-            <section class="contact-section">
-                <h2>제휴 및 문의</h2>
-                <form action="https://formspree.io/f/meervaoa" method="POST" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">성함/업체명</label>
-                        <input type="text" id="name" name="name" required placeholder="이름을 입력하세요">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">이메일 주소</label>
-                        <input type="email" id="email" name="_replyto" required placeholder="example@email.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">문의 내용</label>
-                        <textarea id="message" name="message" rows="4" required placeholder="제휴 관련 내용을 적어주세요"></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">문의 보내기</button>
-                </form>
-            </section>
+        <section id="tips" class="section content-section">
+            <h2>💡 로또 당첨 확률을 높이는 팁</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>1. 번호의 균형 잡기</h3>
+                    <p>홀수와 짝수의 비율을 3:3 또는 2:4로 섞는 것이 통계적으로 가장 많이 등장하는 패턴입니다.</p>
+                </div>
+                <div class="info-card">
+                    <h3>2. 총합의 법칙</h3>
+                    <p>선택한 6개 번호의 총합이 100에서 170 사이에 위치할 때 당첨 확률이 높다는 분석이 있습니다.</p>
+                </div>
+                <div class="info-card">
+                    <h3>3. 연속 번호 피하기</h3>
+                    <p>3개 이상의 연속 번호(예: 1, 2, 3)가 나올 확률은 매우 낮으므로 번호를 골고루 분산시키세요.</p>
+                </div>
+            </div>
+        </section>
 
-            <hr class="divider">
+        <section id="faq" class="section faq-section">
+            <h2>❓ 자주 묻는 질문 (FAQ)</h2>
+            <div class="faq-item">
+                <h3>Q. 이 번호는 정말 당첨되나요?</h3>
+                <p>A. 로또는 확률 게임입니다. 본 생성기는 통계적 무작위성을 기반으로 번호를 추천하며, 당첨을 보장하지는 않으나 재미와 편의를 위해 제작되었습니다.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Q. 이용료는 무료인가요?</h3>
+                <p>A. 네, 모든 번호 생성 서비스는 100% 무료로 제공됩니다.</p>
+            </div>
+        </section>
 
-            <!-- Disqus 댓글 영역 -->
-            <section class="comment-section">
-                <h2>댓글</h2>
-                <div id="disqus_thread"></div>
-                <script>
-                    (function() {
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://prj-1.disqus.com/embed.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                    })();
-                </script>
-            </section>
-        </main>
+        <hr class="divider">
+
+        <section id="contact" class="section">
+            <h2>📩 제휴 및 문의</h2>
+            <form action="https://formspree.io/f/meervaoa" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">성함/업체명</label>
+                    <input type="text" id="name" name="name" required placeholder="예: 홍길동">
+                </div>
+                <div class="form-group">
+                    <label for="email">이메일 주소</label>
+                    <input type="email" id="email" name="_replyto" required placeholder="contact@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">문의 내용</label>
+                    <textarea id="message" name="message" rows="4" required placeholder="문의 사항을 자세히 적어주세요."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">문의 메일 보내기</button>
+            </form>
+        </section>
+
+        <section class="comment-section">
+            <h2>💬 사용자 커뮤니티</h2>
+            <div id="disqus_thread"></div>
+        </section>
     </div>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 로또 행운기. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="privacy.html">개인정보처리방침</a></li>
+                <li><a href="terms.html">이용약관</a></li>
+                <li><a href="https://github.com/iyoseb9-cloud/prj-1.git">소스코드</a></li>
+            </ul>
+        </div>
+    </footer>
+
     <script src="main.js"></script>
+    <script>
+        (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://prj-1.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
 </body>
 </html>
