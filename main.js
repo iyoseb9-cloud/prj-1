@@ -7,17 +7,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-mode');
-        themeBtn.textContent = '화이트 모드';
+        themeBtn.textContent = '라이트 모드';
     }
 
     themeBtn.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
         const isDark = document.body.classList.contains('dark-mode');
-        themeBtn.textContent = isDark ? '화이트 모드' : '다크 모드';
+        themeBtn.textContent = isDark ? '라이트 모드' : '다크 모드';
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
 
-    // 2. 로또 번호 생성 로직
+    // 2. 로또 번호 생성 함수
     function getLottoNumbers() {
         const numbers = [];
         while (numbers.length < 6) {
@@ -29,11 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return numbers.sort((a, b) => a - b);
     }
 
-    // 3. 번호 생성 버튼 클릭 이벤트
+    // 3. 번호 생성 버튼 이벤트
     generateBtn.addEventListener('click', () => {
-        resultArea.innerHTML = ''; // 초기화
+        resultArea.innerHTML = ''; // 화면 초기화
 
-        // 5개 세트 생성
+        // 한 번 클릭에 5세트 생성
         for (let i = 0; i < 5; i++) {
             const row = document.createElement('div');
             row.className = 'lotto-row';
