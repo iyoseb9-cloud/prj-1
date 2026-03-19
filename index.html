@@ -19,9 +19,6 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3682735612738746" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- 테마 토글 버튼 -->
-    <button id="theme-toggle">다크 모드</button>
-
     <header class="main-header">
         <nav class="nav-container">
             <div class="logo">🍀 로또 행운기</div>
@@ -30,9 +27,19 @@
                 <li><a href="#tips">당첨 팁</a></li>
                 <li><a href="#faq">자주 묻는 질문</a></li>
                 <li><a href="#contact">제휴 문의</a></li>
+                <li class="nav-item-theme">
+                    <button id="theme-toggle" class="theme-btn-circle" title="테마 변경">
+                        <span class="theme-icon">🌓</span>
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
+
+    <!-- 탑 버튼 (좌측 하단) -->
+    <button id="top-btn" class="top-btn" title="맨 위로">
+        <span class="top-icon">↑</span>
+    </button>
 
     <div class="container">
         <!-- 상단 광고 영역 -->

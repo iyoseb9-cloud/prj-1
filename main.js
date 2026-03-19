@@ -2,22 +2,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeBtn = document.getElementById('theme-toggle');
     const generateBtn = document.getElementById('generate-btn');
     const resultArea = document.getElementById('result-area');
+    const topBtn = document.getElementById('top-btn');
 
     // 1. 테마 관리 (로컬 스토리지 사용)
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-mode');
-        themeBtn.textContent = '라이트 모드';
     }
 
     themeBtn.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
         const isDark = document.body.classList.contains('dark-mode');
-        themeBtn.textContent = isDark ? '라이트 모드' : '다크 모드';
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
 
-    // 2. 로또 번호 생성 함수
+    // 2. 탑 버튼 (좌측 하단)
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            topBtn.classList.add('show');
+        } else {
+            topBtn.classList.remove('show');
+        }
+    });
+
+    topBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // 3. 로또 번호 생성 함수
     function getLottoNumbers() {
         const numbers = [];
         while (numbers.length < 6) {
@@ -29,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return numbers.sort((a, b) => a - b);
     }
 
-    // 3. 번호 생성 버튼 이벤트
+    // 4. 번호 생성 버튼 이벤트
     generateBtn.addEventListener('click', () => {
         resultArea.innerHTML = ''; // 화면 초기화
 
