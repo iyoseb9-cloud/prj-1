@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const historyList = document.getElementById('history-list');
     const clearHistoryBtn = document.getElementById('clear-history');
 
+    // 모달 요소
+    const modal = document.getElementById('custom-modal');
+    const modalConfirm = document.getElementById('modal-confirm');
+    const modalCancel = document.getElementById('modal-cancel');
+
     // 1. 테마 관리
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
@@ -77,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
             sets: allSets
         };
         history.unshift(newEntry);
-        // 최근 20개만 유지
         if (history.length > 20) history.pop();
         localStorage.setItem('lottoHistory', JSON.stringify(history));
         renderHistory();
@@ -108,11 +112,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 모달 제어
     clearHistoryBtn.addEventListener('click', () => {
-        if (confirm('모든 히스토리를 초기화하시겠습니까?')) {
-            localStorage.removeItem('lottoHistory');
-            renderHistory();
-        }
+        modal.classList.add('show');
+    });
+
+    modalConfirm.addEventListener('click', () => {
+        localStorage.removeItem('lottoHistory');
+        renderHistory();
+        modal.classList.remove('show');
+    });
+
+    modalCancel.addEventListener('click', () => {
+        modal.classList.remove('show');
+    });
+
+    // 배경 클릭 시 모달 닫기
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.remove('show');
     });
 
     // 5. 번호 생성 버튼 이벤트
@@ -129,6 +146,5 @@ document.addEventListener('DOMContentLoaded', () => {
         saveHistory(currentSets);
     });
 
-    // 초기 실행
     renderHistory();
 });
