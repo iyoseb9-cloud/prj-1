@@ -8,8 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 모달 요소
     const modal = document.getElementById('custom-modal');
+    const modalTitle = modal.querySelector('h3');
+    const modalText = modal.querySelector('p');
     const modalConfirm = document.getElementById('modal-confirm');
     const modalCancel = document.getElementById('modal-cancel');
+
+    let isEmptyState = false;
 
     // 1. 테마 관리
     const savedTheme = localStorage.getItem('theme');
@@ -114,12 +118,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 모달 제어
     clearHistoryBtn.addEventListener('click', () => {
+        const history = JSON.parse(localStorage.getItem('lottoHistory') || '[]');
+        if (history.length === 0) {
+            // 비어있는 상태
+            isEmptyState = true;
+            modalTitle.textContent = 'ℹ️ 알림';
+            modalText.textContent = '지울 히스토리가 없습니다.';
+            modalConfirm.textContent = '확인';
+            modalConfirm.classList.replace('btn-danger', 'btn-primary'); // 색상 변경 (초록/파랑 계열)
+            modalCancel.style.display = 'none';
+        } else {
+            // 데이터가 있는 상태
+            isEmptyState = false;
+            modalTitle.textContent = '⚠️ 히스토리 초기화';
+            modalText.textContent = '모든 히스토리 기록을 삭제하시겠습니까?';
+            modalConfirm.textContent = '삭제';
+            modalConfirm.classList.replace('btn-primary', 'btn-danger'); // 다시 빨간색으로
+            modalCancel.style.display = 'inline-block';
+        }
         modal.classList.add('show');
     });
 
     modalConfirm.addEventListener('click', () => {
-        localStorage.removeItem('lottoHistory');
-        renderHistory();
+        if (!isEmptyState) {
+            localStorage.removeItem('lottoHistory');
+            renderHistory();
+        }
         modal.classList.remove('show');
     });
 
@@ -127,7 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.classList.remove('show');
     });
 
-    // 배경 클릭 시 모달 닫기
     modal.addEventListener('click', (e) => {
         if (e.target === modal) modal.classList.remove('show');
     });
